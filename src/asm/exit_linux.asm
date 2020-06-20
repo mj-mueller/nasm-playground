@@ -1,5 +1,5 @@
 ; Exits the program.
-%ifdef APPLE
+%ifdef MACOS
     %define STARTLABEL _main
 %else
     %define STARTLABEL _start
@@ -9,4 +9,4 @@
                 section     .text
 STARTLABEL:     mov         rax, 1
                 mov         rbx, 42
-                int         0x80                    ; invoke syscall to exit
+                syscall                  ; invoke syscall to exit

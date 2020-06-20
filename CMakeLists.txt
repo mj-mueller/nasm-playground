@@ -10,8 +10,10 @@ set(CAN_USE_ASSEMBLER TRUE)
 # Mac settings
 if (APPLE)
     set(CMAKE_ASM_NASM_OBJECT_FORMAT macho64)
+    # Define MACOS for nasm preprocessor
     set(CMAKE_ASM_NASM_FLAGS "-DMACOS")
-    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -macosx_version_min 10.13 -no_pie")
+    # Disabled to not confuse c linker flags
+    #set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -macosx_version_min 10.13 -no_pie")
 endif (APPLE)
 
 if (UNIX AND NOT APPLE)
