@@ -25,7 +25,7 @@ set(CMAKE_ASM_NASM_COMPILE_OBJECT "<CMAKE_ASM_NASM_COMPILER> <INCLUDES> <FLAGS> 
 enable_language(ASM_NASM)
 
 # Adding .asm from src/asm
-file( GLOB ASMSOURCES src/asm/*.asm)
+file( GLOB ASMSOURCES src/asm/**/*.asm)
 foreach( testsourcefile ${ASMSOURCES} )
     string( REGEX REPLACE "(.*/)(.*)([.]asm)" "\\2" testname ${testsourcefile} )
     add_executable( ${testname} ${testsourcefile} )
