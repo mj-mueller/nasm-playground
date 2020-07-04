@@ -9,7 +9,7 @@ _start:     mov         rax, 4                  ; SYS_WRITE opcode
             int         0x80                    ; hardware interrupt
 
             mov         rax, 1                  ; SYS_EXIT
-            mov         rbx, 0                  ; exit code 0
+            xor         rbx, rbx                  ; exit code 0
             int         0x80
 
 
