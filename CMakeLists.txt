@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16.3)
 project("nasm-playground" ASM_NASM C CXX)
 
-#set(CMAKE_BUILD_TYPE DEBUG ) # Adding debug symbols
+set(CMAKE_BUILD_TYPE DEBUG ) # Adding debug symbols
 
 
 set(CMAKE_NASM_LINK_EXECUTABLE "ld <LINK_FLAGS> <OBJECTS> -o <TARGET> <LINK_LIBRARIES>")
@@ -19,7 +19,7 @@ else()
 endif (APPLE)
 
 #Adding inputfile to be able to detect files vis %include. Should use includes but documentation is poorly so use as flag
-set(CMAKE_ASM_NASM_FLAGS "${CMAKE_ASM_NASM_FLAGS} -i ${CMAKE_CURRENT_SOURCE_DIR}/src/asm/elf64/ -i ${CMAKE_CURRENT_SOURCE_DIR}/src/asm/macho64/")
+set(CMAKE_ASM_NASM_FLAGS "${CMAKE_ASM_NASM_FLAGS} -i ${CMAKE_CURRENT_SOURCE_DIR}/src/asm/elf64/lib/ -i ${CMAKE_CURRENT_SOURCE_DIR}/src/asm/macho64/")
 
 # Adding debug symbols
 if(CMAKE_BUILD_TYPE STREQUAL "DEBUG")
